@@ -21,8 +21,9 @@ public class MovmentAtLaFarma : MonoBehaviour
         //left movment limit -13.6223 , go back to egypte
         if (Input.GetKey(KeyCode.LeftArrow))
         {
+            double LeftLimitWall = -12.97418;
             Vector3 move = transform.position + Vector3.left * Time.deltaTime * speed;
-            if (transform.position.x < -13.6223 || move.x < -13.6223)
+            if (transform.position.x < LeftLimitWall || move.x < LeftLimitWall)
             {
                 SceneManager.LoadScene("Egypte");
                 return transform.position;
@@ -35,8 +36,9 @@ public class MovmentAtLaFarma : MonoBehaviour
         //right movment limit 13.33466
         else if (Input.GetKey(KeyCode.RightArrow))
         {
+            double LimitRightWall = 11.86134;
             Vector3 move = transform.position + Vector3.right * Time.deltaTime * speed;
-            if (transform.position.x < 13.33466 || move.x < 13.33466)
+            if (transform.position.x < LimitRightWall || move.x < LimitRightWall)
                 return transform.position + Vector3.right * Time.deltaTime * speed;
             else
                 return transform.position;
@@ -45,8 +47,9 @@ public class MovmentAtLaFarma : MonoBehaviour
         //down movment limit -2.355071
         else if (Input.GetKey(KeyCode.DownArrow))
         {
+            double LimitBottom = -2.355071;
             Vector3 move = transform.position + Vector3.down * Time.deltaTime * speed;
-            if (transform.position.y > -2.355071 || move.y > -2.355071)
+            if (transform.position.y > LimitBottom || move.y > LimitBottom)
                 return transform.position + Vector3.down * Time.deltaTime * speed;
             else
                 return transform.position;
@@ -55,8 +58,9 @@ public class MovmentAtLaFarma : MonoBehaviour
         //up (not included jump function) movment limit -1.55
         else if (Input.GetKey(KeyCode.UpArrow))
         {
+            double LimitTop = -1.55;
             Vector3 move = transform.position + Vector3.up * Time.deltaTime * speed;
-            if (transform.position.y < -1.55 || move.y < -1.55)
+            if (transform.position.y < LimitTop || move.y < LimitTop)
                 return transform.position + Vector3.up * Time.deltaTime * speed;
 
             else

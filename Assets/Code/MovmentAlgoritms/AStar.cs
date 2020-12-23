@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Priority_Queue;
-using MiscUtil;
+using MiscUtil2;
+//using MiscUtil;
 
 
 namespace Assets.Scripts._0_bfs
 {
     public class AStar
     {
-        public static List<NodeType> GetPath<NodeType>(IWeightedGraph<NodeType> graph, NodeType startNode, NodeType endNode, Func<NodeType, NodeType, float> heuristic, int maxiterations = 10000)
+        public static List<NodeType> GetPath<NodeType>(IWeightedGraph<NodeType> graph, NodeType startNode, NodeType endNode, Func<NodeType, NodeType, float> heuristic, Func<NodeType,NodeType,bool> compare ,int maxiterations = 10000)
         {
             List<NodeType> path = new List<NodeType>();
-            FindPath(graph, startNode, endNode, path, heuristic, maxiterations);
+            FindPath(graph, startNode, endNode, path, heuristic, compare, maxiterations);
             return path;
         }
 
@@ -23,6 +24,7 @@ namespace Assets.Scripts._0_bfs
             NodeType endNode,
             List<NodeType> outputPath,
             Func<NodeType, NodeType, float> heuristic,
+            Func<NodeType, NodeType, bool> compare,
             int maxiterations = 10000)
         {
             HashSet<EnrichedNode<NodeType>> exploredNodes = new HashSet<EnrichedNode<NodeType>>(); // closed list
@@ -42,7 +44,10 @@ namespace Assets.Scripts._0_bfs
                 var currentNode = scannedNodes.Dequeue();
 
                 // if its the endNode then we are done.
-                if (Operator.Equal<NodeType>(currentNode.node,endNode))
+                //if (Operator.Equal<NodeType>(currentNode.node,endNode))
+                //if (GetEqualityOperatorResult<NodeType>(currentNode.node, endNode))
+                if (compare(currentNode.node, endNode))
+
                 {
                     PathBackTracking(currentNode, outputPath);
                     return;

@@ -22,8 +22,9 @@ public class MovmentAtTabonChallange : MonoBehaviour
         //left movment limit -13.57991 , go back to egypte
         if (Input.GetKey(KeyCode.LeftArrow))
         {
+            double LeftLimitWall = -13.57991;
             Vector3 move = transform.position + Vector3.left * Time.deltaTime * speed;
-            if (transform.position.x > -13.57991 || move.x > -13.57991)
+            if (transform.position.x > LeftLimitWall || move.x > LeftLimitWall)
             {
                 return transform.position + Vector3.left * Time.deltaTime * speed;
 
@@ -36,8 +37,9 @@ public class MovmentAtTabonChallange : MonoBehaviour
         //right movment limit 13.4
         else if (Input.GetKey(KeyCode.RightArrow))
         {
+            double LimitRightWall = 13.4;
             Vector3 move = transform.position + Vector3.right * Time.deltaTime * speed;
-            if (transform.position.x < 13.4 || move.x < 13.4)
+            if (transform.position.x < LimitRightWall || move.x < LimitRightWall)
                 return transform.position + Vector3.right * Time.deltaTime * speed;
             else
                 return transform.position;
@@ -46,18 +48,20 @@ public class MovmentAtTabonChallange : MonoBehaviour
         //down movment limit -1.828051
         else if (Input.GetKey(KeyCode.DownArrow))
         {
+            double LimitBottom = -1.828051;
             Vector3 move = transform.position + Vector3.down * Time.deltaTime * speed;
-            if (transform.position.y > -1.828051 || move.y > -1.828051)
+            if (transform.position.y > LimitBottom || move.y > LimitBottom)
                 return transform.position + Vector3.down * Time.deltaTime * speed;
             else
                 return transform.position;
         }
 
-        //up (not included jump function) movment limit -1.55
+        //up (not included jump function) movment limit -1
         else if (Input.GetKey(KeyCode.UpArrow))
         {
+            double LimitTop = -1;
             Vector3 move = transform.position + Vector3.up * Time.deltaTime * speed;
-            if (transform.position.y < -1 || move.y < -1)
+            if (transform.position.y < LimitTop || move.y < LimitTop)
                 return transform.position + Vector3.up * Time.deltaTime * speed;
 
             else
@@ -68,8 +72,10 @@ public class MovmentAtTabonChallange : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.H) || Input.GetKey("h"))
 
         {
+            double rightEnternceBackGustusBaginDistance = -4.721267;
+            double leftEnternceBackGustuseEndDistance = -7.504583;
             Vector3 move = transform.position + Vector3.down;
-            if (transform.position.x > -7.504583 && transform.position.x < -4.721267)
+            if (transform.position.x > leftEnternceBackGustuseEndDistance && transform.position.x < rightEnternceBackGustusBaginDistance)
             {
                 SceneManager.LoadScene("GuessTaste");
                 return transform.position; //ToDo Pass into ohter secne

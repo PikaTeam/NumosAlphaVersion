@@ -9,4 +9,16 @@ public class MoveToFirstSecne : MonoBehaviour
     {
         SceneManager.LoadScene("Egypte");
     }
+
+
+    public void info()
+    {
+        SceneManager.LoadScene("Instructions");
+    }
+
+
+    public void options()
+    {
+        SceneManager.LoadScene("Egypte");
+    }
 }

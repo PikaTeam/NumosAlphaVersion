@@ -5857,7 +5857,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1119402547}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 44.04, y: 7.269, z: 0}
+  m_LocalPosition: {x: 43.47, y: 7.23, z: 0}
   m_LocalScale: {x: 2.8097465, y: 0.54757535, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6731,7 +6731,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1280323498}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -8730,7 +8730,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8.478935
+  orthographic size: 11.816431
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -8754,7 +8754,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1606258599}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.534931, y: 11.0469265, z: -52.604412}
+  m_LocalPosition: {x: 21.534931, y: 14.9, z: -52.604412}
   m_LocalScale: {x: 11.039418, y: 11.039418, z: -11.039418}
   m_Children: []
   m_Father: {fileID: 1280323502}

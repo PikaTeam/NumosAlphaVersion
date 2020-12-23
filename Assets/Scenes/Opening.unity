@@ -326,7 +326,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 381368593}
         m_TargetAssemblyTypeName: MoveToFirstSecne, Assembly-CSharp
-        m_MethodName: Begin
+        m_MethodName: info
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -571,7 +571,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1070568090}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.65, y: 0.06, z: 0}
+  m_LocalPosition: {x: -0.21, y: 0.21, z: 0}
   m_LocalScale: {x: 1.3005337, y: 1.3005337, z: 1.3005337}
   m_Children: []
   m_Father: {fileID: 0}

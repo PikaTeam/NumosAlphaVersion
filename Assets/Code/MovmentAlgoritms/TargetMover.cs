@@ -58,11 +58,13 @@ public class TargetMover: MonoBehaviour {
         }
     }
 
+
+
  
     private void MakeOneStepTowardsTheTarget() {
         Vector2 startNode = new Vector2(round(transform.position.x), round(transform.position.y));
         Vector2 endNode = targetInGrid;
-        List<Vector2> shortestPath = AStar.GetPath(Graph, startNode, endNode, heuristicDistance, maxIterations);
+        List<Vector2> shortestPath = AStar.GetPath(Graph, startNode, endNode, heuristicDistance,(v1,v2)=>v1==v2, maxIterations);
         Debug.Log("shortestPath = " + string.Join(" , ",shortestPath));
         if (shortestPath.Count >= 2) {
             Vector2 nextNode = shortestPath[1];
@@ -73,11 +75,16 @@ public class TargetMover: MonoBehaviour {
         }
     }
 
+
+
+
     private static float round (double Num)
     {
         return (float)Math.Round(Num, 1);
 
     }
+
+
 
     
     private static float heuristicDistance(Vector2 startNode, Vector2 endNode)
