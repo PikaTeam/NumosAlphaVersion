@@ -18,53 +18,28 @@ public class MovmentAtLaFarma : MonoBehaviour
 
     protected Vector3 NewPosition()
     {
-        //left movment limit -13.6223 , go back to egypte
+        //leftMovement
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            double LeftLimitWall = -12.97418;
-            Vector3 move = transform.position + Vector3.left * Time.deltaTime * speed;
-            if (transform.position.x < LeftLimitWall || move.x < LeftLimitWall)
-            {
-                SceneManager.LoadScene("Egypte");
-                return transform.position;
-            }
-
-            else
-                return transform.position + Vector3.left * Time.deltaTime * speed;
+            return transform.position + Vector3.left * Time.deltaTime * speed;
         }
 
-        //right movment limit 13.33466
+        //RightMovement
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            double LimitRightWall = 11.86134;
-            Vector3 move = transform.position + Vector3.right * Time.deltaTime * speed;
-            if (transform.position.x < LimitRightWall || move.x < LimitRightWall)
-                return transform.position + Vector3.right * Time.deltaTime * speed;
-            else
-                return transform.position;
+            return transform.position + Vector3.right * Time.deltaTime * speed;
         }
 
-        //down movment limit -2.355071
+        //DownMovement
         else if (Input.GetKey(KeyCode.DownArrow))
         {
-            double LimitBottom = -2.355071;
-            Vector3 move = transform.position + Vector3.down * Time.deltaTime * speed;
-            if (transform.position.y > LimitBottom || move.y > LimitBottom)
-                return transform.position + Vector3.down * Time.deltaTime * speed;
-            else
-                return transform.position;
+            return transform.position + Vector3.down * Time.deltaTime * speed;
         }
 
-        //up (not included jump function) movment limit -1.55
+        //UpMovement
         else if (Input.GetKey(KeyCode.UpArrow))
         {
-            double LimitTop = -1.55;
-            Vector3 move = transform.position + Vector3.up * Time.deltaTime * speed;
-            if (transform.position.y < LimitTop || move.y < LimitTop)
-                return transform.position + Vector3.up * Time.deltaTime * speed;
-
-            else
-                return transform.position;
+            return transform.position + Vector3.up * Time.deltaTime * speed;
         }
 
         else

@@ -19,53 +19,28 @@ public class MovmentAtTabonChallange : MonoBehaviour
 
     protected Vector3 NewPosition()
     {
-        //left movment limit -13.57991 , go back to egypte
+        //leftMovement
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            double LeftLimitWall = -13.57991;
-            Vector3 move = transform.position + Vector3.left * Time.deltaTime * speed;
-            if (transform.position.x > LeftLimitWall || move.x > LeftLimitWall)
-            {
-                return transform.position + Vector3.left * Time.deltaTime * speed;
-
-            }
-
-            else
-                return transform.position;
+            return transform.position + Vector3.left * Time.deltaTime * speed;
         }
 
-        //right movment limit 13.4
+        //RightMovement
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            double LimitRightWall = 13.4;
-            Vector3 move = transform.position + Vector3.right * Time.deltaTime * speed;
-            if (transform.position.x < LimitRightWall || move.x < LimitRightWall)
-                return transform.position + Vector3.right * Time.deltaTime * speed;
-            else
-                return transform.position;
+            return transform.position + Vector3.right * Time.deltaTime * speed;
         }
 
-        //down movment limit -1.828051
+        //DownMovement
         else if (Input.GetKey(KeyCode.DownArrow))
         {
-            double LimitBottom = -1.828051;
-            Vector3 move = transform.position + Vector3.down * Time.deltaTime * speed;
-            if (transform.position.y > LimitBottom || move.y > LimitBottom)
-                return transform.position + Vector3.down * Time.deltaTime * speed;
-            else
-                return transform.position;
+            return transform.position + Vector3.down * Time.deltaTime * speed;
         }
 
-        //up (not included jump function) movment limit -1
+        //UpMovement
         else if (Input.GetKey(KeyCode.UpArrow))
         {
-            double LimitTop = -1;
-            Vector3 move = transform.position + Vector3.up * Time.deltaTime * speed;
-            if (transform.position.y < LimitTop || move.y < LimitTop)
-                return transform.position + Vector3.up * Time.deltaTime * speed;
-
-            else
-                return transform.position;
+            return transform.position + Vector3.up * Time.deltaTime * speed;
         }
 
         //H key down -> getting into places

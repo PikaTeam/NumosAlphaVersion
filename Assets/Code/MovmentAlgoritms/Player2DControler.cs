@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+
+
 public class Player2DControler : MonoBehaviour
 {
 
@@ -11,79 +14,37 @@ public class Player2DControler : MonoBehaviour
     public float jumpForceEffectByMomentomRatio;
     public float speed = 4f;
 
-    // Start is called before the first frame update
-    /* void Start()
-     {
 
-     }*/
+    //for coliision use
+    public bool isGrounded = false;
+    public bool canMomentumJump = false;
+    public LayerMask groundLayer;
 
     protected Vector3 NewPosition()
     {
-        //left movment limit -66.55
+        //leftMovement
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            double LeftLimitWall = -66.55;
-            Vector3 move = transform.position + Vector3.left * Time.deltaTime * speed;
-            if (transform.position.x > LeftLimitWall || move.x > LeftLimitWall)
-                return transform.position + Vector3.left * Time.deltaTime * speed;
-            else
-                return transform.position;
+            return transform.position + Vector3.left * Time.deltaTime * speed;
         }
 
-        //right movment limit 130.45
+        //RightMovement
         else if (Input.GetKey(KeyCode.RightArrow))
         {
-            double LimitRightWall = 130.45;
-            Vector3 move = transform.position + Vector3.right * Time.deltaTime * speed;
-            if (transform.position.x < LimitRightWall || move.x < LimitRightWall)
-                return transform.position + Vector3.right * Time.deltaTime * speed;
-            else
-                return transform.position;
+            return transform.position + Vector3.right * Time.deltaTime * speed;
         }
 
-        //down movment limit -5.3
+        //DownMovement
         else if (Input.GetKey(KeyCode.DownArrow))
         {
-            double LimitBottom = -5.3;
-            Vector3 move = transform.position + Vector3.down * Time.deltaTime * speed;
-            if (transform.position.y > LimitBottom || move.y > LimitBottom)
-                return transform.position + Vector3.down * Time.deltaTime * speed;
-            else
-                return transform.position;
+            return transform.position + Vector3.down * Time.deltaTime * speed;
         }
 
-        //up (not included jump function) movment limit -3.36
+        //UpMovement
         else if (Input.GetKey(KeyCode.UpArrow))
         {
-            double LimitTop = -3.36;
-            Vector3 move = transform.position + Vector3.up * Time.deltaTime * speed;
-            if (transform.position.y < LimitTop || move.y < LimitTop)
-                return transform.position + Vector3.up * Time.deltaTime * speed;
-
-            /*//the palace place ,make him go up stairs
-            if (transform.position.x < -40.55 || transform.position.x > -62.55)
-            {
-                if (transform.position.y < 1)
-                    return transform.position + Vector3.up * Time.deltaTime * speed;
-                else
-                    return transform.position;
-            }*/
-
-            else
-                return transform.position;
+            return transform.position + Vector3.up * Time.deltaTime * speed;
         }
-
-
-
-        /*//jump   //ToDO - the problem is when we do pisic it takes the player under the ground and we dont want it so it problamtic.
-        else if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Vector3 move = transform.position + Vector3.up;
-            if (transform.position.y < -3.36 || move.y < -3.36)
-                return transform.position + Vector3.up;
-            else
-                return transform.position;
-        }*/
 
 
         //H key down -> getting into places
@@ -125,19 +86,6 @@ public class Player2DControler : MonoBehaviour
         }
 
 
-        /*//B key down -> throwing bandage on the mommy
-        else if (Input.GetKeyDown(KeyCode.B) || Input.GetKey("b"))
-
-        {
-            Vector3 move = transform.position + Vector3.down;
-            if (transform.position.x > -13.55 && transform.position.x < -15.55)
-                return transform.position + move; //ToDo Pass into ohter secne
-            else
-                return transform.position;
-        }*/
-
-
-
         //I key down -> getting into places
         else if (Input.GetKeyDown(KeyCode.I) || Input.GetKey("i"))
         {
@@ -156,6 +104,18 @@ public class Player2DControler : MonoBehaviour
 
     }
 
+    void FixedUpdate()
+    {
+        /*bool isTouchingGround = Physics2D.OverlapCircle((Vector2)transform.position + new Vector2(0, -0.6f), 0.2f, groundLayer);
+        isGrounded = isTouchingGround && rb2d.velocity.y < 0.1;
+        bool isNearGroundF = Physics2D.OverlapCircle((Vector2)transform.position + new Vector2(0, -0.85f), 0.4f, groundLayer);
+        if (isNearGroundF && rb2d.velocity.y < -1)
+            canMomentumJump = true;
+        else canMomentumJump = false;
+
+
+        Debug.Log("is GROUNDED: " + isGrounded);*/
+    }
 
 
     // Update is called once per frame
@@ -164,4 +124,3 @@ public class Player2DControler : MonoBehaviour
                 transform.position = NewPosition();
     }
 }
-    

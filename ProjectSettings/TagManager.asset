@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Mummy
+  - leftlimit
+  - RightLimit
+  - TopLimit
+  - DownLimit
+  - DiffrentSecne
   layers:
   - Default
   - TransparentFX
