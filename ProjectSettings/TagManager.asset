@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Mummy
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Groumd
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: BackGround
+    uniqueID: 2074120153
+    locked: 0
+  - name: HileFarAway
+    uniqueID: 2682160339
+    locked: 0
+  - name: Skies
+    uniqueID: 2630745389
+    locked: 0
+  - name: MidHile
+    uniqueID: 768630935
+    locked: 0
+  - name: Pyramid
+    uniqueID: 3975595741
+    locked: 0
+  - name: Reed
+    uniqueID: 1909314097
+    locked: 0
+  - name: WalkingYard
+    uniqueID: 1111984255
+    locked: 0
+  - name: Places
+    uniqueID: 2704248357
+    locked: 0
+  - name: LaFarmaBackGround
+    uniqueID: 3385144687
+    locked: 0
+  - name: LaFarmaGround
+    uniqueID: 4024772331
+    locked: 0
+  - name: LaFarmaSlaves
+    uniqueID: 2691891871
+    locked: 0
+  - name: LaFarmaModelStamd
+    uniqueID: 317244699
+    locked: 0
+  - name: LaFarmaObjects
+    uniqueID: 2405340535
+    locked: 0
+  - name: BackeryBackGround
+    uniqueID: 3874685051
+    locked: 0
+  - name: BackeryGround
+    uniqueID: 2661692429
+    locked: 0
+  - name: BackeryObjects
+    uniqueID: 838737265
+    locked: 0
+  - name: BackeryObjectsFront
+    uniqueID: 1542551703
+    locked: 0
+  - name: TabonLevelBackground
+    uniqueID: 3195175567
+    locked: 0
+  - name: TabonLevelGround
+    uniqueID: 1139795783
+    locked: 0
+  - name: TabonLevelArc
+    uniqueID: 3381597199
+    locked: 0
+  - name: TabonLevelObjects
+    uniqueID: 2813524985
+    locked: 0
+  - name: Character
+    uniqueID: 3408344867
+    locked: 0
+  - name: Palms
+    uniqueID: 752583999
+    locked: 0
+  - name: Zombies
+    uniqueID: 1422360329
+    locked: 0
+  - name: MommyQuest
+    uniqueID: 1064484201
+    locked: 0
