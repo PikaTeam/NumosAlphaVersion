@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Opening.unity
+    guid: ced6fdb9d302ec340b468791ddca9754
+  - enabled: 1
     path: Assets/Scenes/Egypte.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
@@ -17,10 +20,25 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LaFarma.unity
     guid: 11235ce267325984cb6cb0d6fc278121
-  - enabled: 0
-    path: Assets/Scenes/Opening.unity
-    guid: ced6fdb9d302ec340b468791ddca9754
   - enabled: 1
     path: Assets/Scenes/Instructions.unity
     guid: 937e4e59e8f56184eb8e69d3f28d067b
+  - enabled: 1
+    path: Assets/Scenes/PausePage.unity
+    guid: b64d0afb61c5da645b01b87a70e50bfc
+  - enabled: 1
+    path: Assets/Scenes/Restart.unity
+    guid: 1ec7729b59377b74fab9227d5d9e771d
+  - enabled: 1
+    path: Assets/Scenes/Invatorey.unity
+    guid: 3c9708f1aae003e40b7946fc044d6cb6
+  - enabled: 1
+    path: Assets/Scenes/Options.unity
+    guid: 34f179e64647cb54cbe173b5ad6220cd
+  - enabled: 1
+    path: Assets/Scenes/LaFarmaChallange.unity
+    guid: 92faa532d01661f4dbc71b3d64e1bc61
+  - enabled: 1
+    path: Assets/Scenes/Info.unity
+    guid: 28a580856c2989f49b3d99bc0f550440
   m_configObjects: {}

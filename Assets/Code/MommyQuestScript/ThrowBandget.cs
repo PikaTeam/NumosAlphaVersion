@@ -12,7 +12,7 @@ public class ThrowBandget : MonoBehaviour
 
 
 
-         if (Input.GetKeyDown(KeyCode.B))
+         if (Input.GetKeyDown(KeyPanel.ThrowBandage))
         {
             GameObject Band = Instantiate(Bandge,transform.position,new Quaternion());
             Band.GetComponent<Rigidbody2D>().velocity = Vector2.right * Speed;

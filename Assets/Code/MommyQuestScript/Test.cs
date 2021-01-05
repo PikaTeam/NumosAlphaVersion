@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Test : MonoBehaviour
 {
+    //the loader chacekr;
+    PlayerStatusData damage;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,8 @@ public class Test : MonoBehaviour
 
        
             Debug.Log("oouch");
- 
+            //SingleToon.getInstance().curlife.damage(5);
+
+
     }
 }

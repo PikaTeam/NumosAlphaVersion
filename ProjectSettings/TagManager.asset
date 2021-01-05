@@ -10,6 +10,12 @@ TagManager:
   - TopLimit
   - DownLimit
   - DiffrentSecne
+  - Instruction
+  - Ins
+  - Brick
+  - Pyrmid
+  - TailorStufff
+  - Mrppayon
   layers:
   - Default
   - TransparentFX
@@ -20,7 +26,7 @@ TagManager:
   - 
   - 
   - Groumd
-  - 
+  - secondCamara
   - 
   - 
   - 
@@ -121,4 +127,13 @@ TagManager:
     locked: 0
   - name: MommyQuest
     uniqueID: 1064484201
+    locked: 0
+  - name: InvitoryPad
+    uniqueID: 1950188141
+    locked: 0
+  - name: InvatoryTools_Arrow_items_pads
+    uniqueID: 3638611195
+    locked: 0
+  - name: Gui
+    uniqueID: 1317954321
     locked: 0

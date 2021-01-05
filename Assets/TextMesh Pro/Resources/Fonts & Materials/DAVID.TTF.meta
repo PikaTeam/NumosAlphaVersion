@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 718a5fb7fde7f1d488423fe3b37e19f7
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - David
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 8024abe053a34f342a06c091349a7e21, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

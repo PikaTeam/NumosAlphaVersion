@@ -11,6 +11,7 @@ public class MovmentAtTabonChallange : MonoBehaviour
     public float jumpForceEffectByMomentomRatio;
     public float speed = 4f;
 
+    public GameObject InvatoryForUSe;
     // Start is called before the first frame update
     /* void Start()
         {
@@ -20,31 +21,31 @@ public class MovmentAtTabonChallange : MonoBehaviour
     protected Vector3 NewPosition()
     {
         //leftMovement
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyPanel.MoveLeft))
         {
             return transform.position + Vector3.left * Time.deltaTime * speed;
         }
 
         //RightMovement
-        else if (Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyPanel.MoveRight))
         {
             return transform.position + Vector3.right * Time.deltaTime * speed;
         }
 
         //DownMovement
-        else if (Input.GetKey(KeyCode.DownArrow))
+        else if (Input.GetKey(KeyPanel.MoveDown))
         {
             return transform.position + Vector3.down * Time.deltaTime * speed;
         }
 
         //UpMovement
-        else if (Input.GetKey(KeyCode.UpArrow))
+        else if (Input.GetKey(KeyPanel.MoveUp))
         {
             return transform.position + Vector3.up * Time.deltaTime * speed;
         }
 
         //H key down -> getting into places
-        else if (Input.GetKeyDown(KeyCode.H) || Input.GetKey("h"))
+        else if (Input.GetKeyDown(KeyPanel.EnterToPlaces))
 
         {
             double rightEnternceBackGustusBaginDistance = -4.721267;
@@ -61,13 +62,22 @@ public class MovmentAtTabonChallange : MonoBehaviour
             {
                 return transform.position;
             }
+
+            return transform.position;
         }
+
+        //M key down -> open invatory
+        else if (Input.GetKeyDown(KeyCode.M))
+        {
+            Instantiate(InvatoryForUSe);
+            return transform.position;
+        }
+
 
         else
         {
             return transform.position;
         }
-        
 
 
 

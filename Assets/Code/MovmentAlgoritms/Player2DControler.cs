@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 
 
+
 public class Player2DControler : MonoBehaviour
 {
 
@@ -20,35 +21,37 @@ public class Player2DControler : MonoBehaviour
     public bool canMomentumJump = false;
     public LayerMask groundLayer;
 
+    public GameObject InvatoryForUSe;
+
     protected Vector3 NewPosition()
     {
         //leftMovement
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyPanel.MoveLeft))
         {
             return transform.position + Vector3.left * Time.deltaTime * speed;
         }
 
         //RightMovement
-        else if (Input.GetKey(KeyCode.RightArrow))
+        else if (Input.GetKey(KeyPanel.MoveRight))
         {
             return transform.position + Vector3.right * Time.deltaTime * speed;
         }
 
         //DownMovement
-        else if (Input.GetKey(KeyCode.DownArrow))
+        else if (Input.GetKey(KeyPanel.MoveDown))
         {
             return transform.position + Vector3.down * Time.deltaTime * speed;
         }
 
         //UpMovement
-        else if (Input.GetKey(KeyCode.UpArrow))
+        else if (Input.GetKey(KeyPanel.MoveUp))
         {
             return transform.position + Vector3.up * Time.deltaTime * speed;
         }
 
 
         //H key down -> getting into places
-        else if (Input.GetKeyDown(KeyCode.H) || Input.GetKey("h"))
+        else if (Input.GetKeyDown(KeyPanel.EnterToPlaces))
 
         {
             double rightEnternceLaFarmaBaginDistance = -15.55;
@@ -86,19 +89,53 @@ public class Player2DControler : MonoBehaviour
         }
 
 
-        //I key down -> getting into places
+        //I key down -> getting info
         else if (Input.GetKeyDown(KeyCode.I) || Input.GetKey("i"))
         {
             SceneManager.LoadScene("Instructions");
             return transform.position;
         }
-        
+
+        //M key down -> open invatory
+        else if (Input.GetKeyDown(KeyCode.M))
+        { 
+            Instantiate(InvatoryForUSe);
+            return transform.position;
+        }
+
+        /* //T key down -> taking things in levels
+         else if (Input.GetKeyDown(KeyCode.T) || Input.GetKey("t"))
+         {
+             //need to put here an option to take object and clone it
+             //plas return the posion of him and find what is the value inside of him.
+             SceneManager.LoadScene("Instructions");
+             return transform.position;
+         }
+
+         //G key down -> giving things in levels
+         else if (Input.GetKeyDown(KeyCode.G) || Input.GetKey("g"))
+         {
+             //need to put here an option to gave object and destroy it
+             SceneManager.LoadScene("Instructions");
+             return transform.position;
+         }*/
+
+        //P key down -> giving things in levels
+        else if (Input.GetKeyDown(KeyCode.P) || Input.GetKey("p"))
+        {
+            //need to put here an option to gave object and destroy it
+            SceneManager.LoadScene("PausePage");
+            return transform.position;
+        }
+
 
         //if nofing preesed
         else
         {
             return transform.position;
         }
+
+
 
 
 

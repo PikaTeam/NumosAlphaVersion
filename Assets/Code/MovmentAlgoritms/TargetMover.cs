@@ -25,6 +25,9 @@ public class TargetMover: MonoBehaviour {
 
     [SerializeField] Vector2 TopLeft,BottomRight;
 
+    //the loader chacekr;
+    //PlayerStatusData damage;
+
     protected bool atTarget;  // This property is set to "true" whenever the object has already found the target.
 
     public void SetTarget(Vector2 newTarget)
@@ -72,6 +75,11 @@ public class TargetMover: MonoBehaviour {
             timeBetweenSteps = 0.1f;
         } else {
             atTarget = true;
+            //enable to damge the charcther
+            Debug.Log("im here coacht");
+
+            //SingleToon.getInstance().curlife.damage(5);
+            
         }
     }
 
