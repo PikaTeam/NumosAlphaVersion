@@ -8,7 +8,9 @@ using UnityEngine.Tilemaps;
 /**
  * This component moves its object towards a given target position.
  */
-public class TargetMover: MonoBehaviour {
+public class TargetMover: MonoBehaviour 
+{
+    Vector2 NextStep;
 
 
     [Tooltip("The speed by which the object moves towards the target, in meters (=grid units) per second")]
@@ -37,6 +39,10 @@ public class TargetMover: MonoBehaviour {
             targetInWorld = newTarget;
             targetInGrid = new Vector2(round(targetInWorld.x), round(targetInWorld.y));
             atTarget = false;
+            Debug.Log("in world is: " + targetInWorld);
+            Debug.Log("in grid is: " + targetInGrid);
+            Debug.Log("the Next step is: " + NextStep);
+            MakeOneStepTowardsTheTarget();
         }
     }
 
@@ -50,14 +56,23 @@ public class TargetMover: MonoBehaviour {
     protected virtual void Start() {
         Graph = new BoundedAreaGraph(TopLeft, BottomRight);
         timeBetweenSteps = 1 / speed;
+        targetInGrid = transform.position;
+        NextStep = transform.position;
         StartCoroutine(MoveTowardsTheTarget());
     }
+
+
 
     IEnumerator MoveTowardsTheTarget() {
         for(;;) {
             yield return new WaitForSeconds(timeBetweenSteps);
+            Debug.Log("the transform is: " + transform.position);
+            Debug.Log("the next is: " + NextStep);
             if (enabled && !atTarget)
+                MakeOneStepTowardNextStep();
+            else
                 MakeOneStepTowardsTheTarget();
+
         }
     }
 
@@ -70,9 +85,14 @@ public class TargetMover: MonoBehaviour {
         List<Vector2> shortestPath = AStar.GetPath(Graph, startNode, endNode, heuristicDistance,(v1,v2)=>v1==v2, maxIterations);
         Debug.Log("shortestPath = " + string.Join(" , ",shortestPath));
         if (shortestPath.Count >= 2) {
+            Debug.Log("the transform is: " + transform.position);
+            
             Vector2 nextNode = shortestPath[1];
-            transform.position = (Vector2)nextNode;
-            timeBetweenSteps = 0.1f;
+            Debug.Log("the next is: " + nextNode);
+            NextStep = nextNode;
+            
+            
+            
         } else {
             atTarget = true;
             //enable to damge the charcther
@@ -83,12 +103,22 @@ public class TargetMover: MonoBehaviour {
         }
     }
 
+    private void MakeOneStepTowardNextStep()
+    {
+        if (NextStep == (Vector2)transform.position)
+        {
+            atTarget = true;
+        }
+        transform.position = Vector2.MoveTowards(transform.position, NextStep, 0.1f );
+        
+    }
+
 
 
 
     private static float round (double Num)
     {
-        return (float)Math.Round(Num, 1);
+        return (float)Math.Round(Num, 0);
 
     }
 

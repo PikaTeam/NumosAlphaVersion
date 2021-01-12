@@ -26,14 +26,14 @@ public class BoundedAreaGraph : MonoBehaviour, IWeightedGraph <Vector2>
 
     static Vector2[] directions =
     {
-        new Vector2(-0.1f,0),
-        new Vector2(0.1f,0),
-        new Vector2(0,-0.1f),
-        new Vector2(0,0.1f),
-        new Vector2(0.1f,0.1f),
-        new Vector2(-0.1f,-0.1f),
-        new Vector2(-0.1f,0.1f),
-        new Vector2(0.1f,-0.1f)
+        new Vector2(-1f,0),
+        new Vector2(1f,0),
+        new Vector2(0,-1f),
+        new Vector2(0,1f),
+        new Vector2(1f,1f),
+        new Vector2(-1f,-1f),
+        new Vector2(-1f,1f),
+        new Vector2(1f,-1f)
 
         /*new Vector2(-0.2f,0),
         new Vector2(0.2f,0),
@@ -68,7 +68,7 @@ public class BoundedAreaGraph : MonoBehaviour, IWeightedGraph <Vector2>
 
             
             
-                yield return new KeyValuePair<Vector2, float>(Newpos, 0.1f);
+                yield return new KeyValuePair<Vector2, float>(Newpos, 1f);
         }
     }
   }

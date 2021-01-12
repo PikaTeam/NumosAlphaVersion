@@ -15,7 +15,8 @@ public class SolutionValidator : MonoBehaviour
 
     GameObject close;
 
-    
+    //talking
+    //public TextMeshProUGUI textdisplay;
 
 
     public void ValidateAnswer()
@@ -68,7 +69,9 @@ public class SolutionValidator : MonoBehaviour
         SingleToon.getInstance().curscore.raise(300);
         SingleToon.getInstance().curmummycaght.get(1);
 
-        GetComponent<CloseQuest>().Close();
+        //textdisplay.text = "כל הכבוד! הצלחת לפתור את חידת המומיה, והפלא ופלא תראה מה נמצא לידה!" + "\n" + "שק של מאה מטבעות שהצטרפו הישר לבר המטבעות שלך שנמצא משמאל למסך ליד הסימון מטבע" + "\n" + "300 נקודות שנמצאות מתחת לבר המטבעות, לצד סימון הכוכב" + "\n" + "מומיה אחת לאוסף המומיות שלך - ניתן לראות את כמות המומיות שיש לך מתחת לתמונת הפרופיל שלך משמאל למסך למעלה. תמיד תוכל להביא תמומיות לצינוק ולקבל עוד נקודות.";
+
+        GetComponent<CloseQuest>().Close(true);
 
 
         // 1. Player gains money.
@@ -81,7 +84,7 @@ public class SolutionValidator : MonoBehaviour
         Debug.Log("WRONG ANSWER!");
         SingleToon.getInstance().curlife.damage(15);
 
-        GetComponent<CloseQuest>().Close();
+        GetComponent<CloseQuest>().Close(false);
         // 1. Player lose health points.
         // 2. Close quest.
     }

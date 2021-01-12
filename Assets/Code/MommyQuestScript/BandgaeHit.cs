@@ -9,9 +9,11 @@ public class BandgaeHit : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag=="Mummy")
+        if (collision.gameObject.tag == "Mummy")
         {
-            Instantiate(QuestPad);
+            GameObject quest = Instantiate(QuestPad);
+            quest.GetComponent<CloseQuest>().Mymummy = collision.gameObject;
+            Destroy(gameObject);
         }
     }
 }

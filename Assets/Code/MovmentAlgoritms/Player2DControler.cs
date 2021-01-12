@@ -59,6 +59,7 @@ public class Player2DControler : MonoBehaviour
             Vector3 move = transform.position + Vector3.down;
             if (transform.position.x < leftEnternceLfarmaEndDistance && transform.position.x > rightEnternceLaFarmaBaginDistance)
             {
+                Location.SaveLocation(transform.position);
                 SceneManager.LoadScene("LaFarma");
                 return transform.position; //ToDo Pass into ohter secne
                 //Debug.Log("we are the chmpions");
@@ -68,6 +69,7 @@ public class Player2DControler : MonoBehaviour
             double leftEnternceGuessTasteEndDistance = 58.45;
             if (transform.position.x > rightEnternceGuessTasteaBaginDistance && transform.position.x < leftEnternceGuessTasteEndDistance)
             {
+                Location.SaveLocation(transform.position);
                 SceneManager.LoadScene("GuessTaste");
                 return transform.position;
                 //return transform.position + move; //ToDo Pass into ohter secne
@@ -77,7 +79,8 @@ public class Player2DControler : MonoBehaviour
             double PlusShopLimitEnternce = 114.45;
             if (transform.position.x > PlusShopLimitEnternce)
             {
-                SceneManager.LoadScene("LaFarma");
+                Location.SaveLocation(transform.position);
+                SceneManager.LoadScene("PlusShop");
                 return transform.position;
                 //return transform.position + move; //ToDo Pass into ohter secne
             }
@@ -160,4 +163,6 @@ public class Player2DControler : MonoBehaviour
     {
                 transform.position = NewPosition();
     }
+
+    
 }

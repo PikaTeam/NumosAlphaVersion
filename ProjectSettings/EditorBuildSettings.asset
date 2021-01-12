@@ -41,4 +41,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Info.unity
     guid: 28a580856c2989f49b3d99bc0f550440
+  - enabled: 1
+    path: Assets/Scenes/CloseCastle.unity
+    guid: f4cabef07f3e8c84196fbfc925c828b9
+  - enabled: 1
+    path: Assets/Scenes/PlusShop.unity
+    guid: 93247e64f8c6e714e830deaa088760b7
+  - enabled: 1
+    path: Assets/Scenes/Guasstustry2.unity
+    guid: 708c71f794f2d2e488891329a1d02a4e
   m_configObjects: {}

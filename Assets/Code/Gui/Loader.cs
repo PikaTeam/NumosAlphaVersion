@@ -9,6 +9,10 @@ public class Loader : MonoBehaviour
     public MoneyGui mogui;
     public SCoreGui sgui;
 
+   
+
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +23,9 @@ public class Loader : MonoBehaviour
         mogui.setamount(data.curmoney);
         sgui.setamount(data.curscore);
         //data.curlife.damage(20);
+
+
+        MissionStatus info = SingleToon.getState();
 
     }
 

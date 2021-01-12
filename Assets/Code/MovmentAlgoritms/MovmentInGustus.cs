@@ -52,7 +52,7 @@ public class MovmentInGustus : MonoBehaviour
         //click on A
         else if (Input.GetKeyDown(KeyCode.A) || Input.GetKey("a"))
         {
-                SceneManager.LoadScene("GuessTasteTabon");
+                SceneManager.LoadScene("Guasstustry2");
                 return transform.position; //ToDo Pass into ohter secne
             }
 

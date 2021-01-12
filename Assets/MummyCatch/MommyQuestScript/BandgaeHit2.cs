@@ -11,7 +11,8 @@ public class BandgaeHit2 : MonoBehaviour
     {
         if (collision.gameObject.tag=="Mummy")
         {
-            Instantiate(QuestPad);
+            GameObject quest = Instantiate(QuestPad);
+            quest.GetComponent<CloseQuest>().Mymummy = collision.gameObject;
             Destroy(gameObject);
         }
     }

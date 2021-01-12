@@ -106,6 +106,7 @@ public class NumberSuffleForGuasstaste : MonoBehaviour
     // c. the diviosor
     public void FirstLevel()
     {
+        
         //put values into bricks
         combinationprime = firstPrime * firstPrime;
         BricksNumbersDisplay[0].text = firstPrime.ToString();
@@ -133,6 +134,7 @@ public class NumberSuffleForGuasstaste : MonoBehaviour
 
     public bool FirstBase()
     {
+
         //check if the base is done
         bool ok = false;
         Debug.Log("the second prime checker vaalue is: " + SecondPrimeGot + " and the first prim calue is: " + FirstPrimeGot);
@@ -221,7 +223,7 @@ public class NumberSuffleForGuasstaste : MonoBehaviour
             NumForDivisGot = false;
 
             //let the player know his status
-            textdisplayshow.text = "כל הכבוד לכם! עכשיו בואו נראה האם תצליחו למצוא שילובים נוספים להרכבת הטאבון כי אני צריכה שתיים";
+            textdisplayshow.text = "כל הכבוד לכם! עכשיו בואו נראה האם תצליחו למצוא שילובים נוספים להרכבת הטאבון כי אני צריכה שתיים" + "\n" + "כל שעליכם לעשות זה למצוא דרך נוספת להגיע למכפלה המופיעה למעל השונה מהדרך הראשונה שמצאתם, שימו לב שייתכן שהראשוניים ישארו אותם הראשוניים ורק סדר ההכפלה ישתנה";
             Debug.Log("line 207 - level1 - base3 - done");
 
             //set ok - that the mission is done
@@ -251,7 +253,7 @@ public class NumberSuffleForGuasstaste : MonoBehaviour
             NumForDivisGot = false;
 
             //let the player know his status
-            textdisplayshow.text = "כל הכבוד!!! עכשיו אני אוכל להכין יותר מטעמים וכמובן להשלים להכנת את החלק הדרוש להצלת המלל." +"\n" +"בתודה על העזרה הרבה שלכם קבלו פרס קטן זה";
+            textdisplayshow.text = "כל הכבוד!!! עכשיו אני אוכל להכין יותר מטעמים וכמובן להשלים להכנת את החלק הדרוש להצלת המלל. אופן הפעולה שלכם בשיטה היה לפי מספרים פריקים, האומר שכל מספר פריק מורכב מכפל של מספרים ראשוניים" + "\n" +"נזכור שמספר פריק פירושו מספר שהוא לא ראשוני, מספר ראשוני זה מספר שמתחלק רק באחד ובעצמו."+ "\n" + "בתודה על העזרה הרבה שלכם קבלו פרס קטן זה";
             Debug.Log("line 255 - level2 - base3 - done");
 
             //set ok - that the mission is done
@@ -282,11 +284,11 @@ public class NumberSuffleForGuasstaste : MonoBehaviour
     {
         level = 2;
         //put values into bricks
-        combinationprime = SecondPrime * SecondPrime;
+        combinationprime = SecondPrime * firstPrime;
         BricksNumbersDisplay[0].text = SecondPrime.ToString();
         Debug.Log("Base1 Number: " + SecondPrime);
-        BricksNumbersDisplay[1].text = SecondPrime.ToString();
-        Debug.Log("Base1 Number2: " + SecondPrime);
+        BricksNumbersDisplay[1].text = firstPrime.ToString();
+        Debug.Log("Base1 Number2: " + firstPrime);
         BricksNumbersDisplay[2].text = firstPrime.ToString();
         Debug.Log("Base1 Number3: " + firstPrime);
         BricksNumbersDisplay[3].text = combinationprime.ToString();
@@ -348,13 +350,30 @@ public class NumberSuffleForGuasstaste : MonoBehaviour
                     return true;
                 }
 
+                if (brick.GetComponent<NumberAtBrick>().NumAtBrick() != 2 || brick.GetComponent<NumberAtBrick>().NumAtBrick() != 3 || brick.GetComponent<NumberAtBrick>().NumAtBrick() != 5 || brick.GetComponent<NumberAtBrick>().NumAtBrick() != 7 || brick.GetComponent<NumberAtBrick>().NumAtBrick() != 11)
+                {
+                    Debug.Log("level1 - base1 - you find " + brick.GetComponent<NumberAtBrick>().NumAtBrick() + " not a prime");
+                    textdisplayshow.text = " מצטערת, אני צריכה שהטאבון שלי יהיה מורכב ממספרים ראשונים, כאלה שאי אפשר לפרק לחלקים למספרים אחרים כמו מספרים פריקים, כמו שאתם וודאי זוכרים מספר פריק הוא מספר שמורכב ממספרים ראשוניים.";
+                }
+
                 //if the player didnt find the right brick
                 if (brick.GetComponent<NumberAtBrick>().NumAtBrick() != SecondPrime && brick.GetComponent<NumberAtBrick>().NumAtBrick() != firstPrime)
                 {
-                    Debug.Log("level1 - base1 - you wrong");
-                    textdisplayshow.text = "חוששני שהמספרים הללו לא מייצגים את הכפולה המצויינת בראש המגדל";
-                    return true;
+                    if (brick.GetComponent<NumberAtBrick>().NumAtBrick() != 2 || brick.GetComponent<NumberAtBrick>().NumAtBrick() != 3 || brick.GetComponent<NumberAtBrick>().NumAtBrick() != 5 || brick.GetComponent<NumberAtBrick>().NumAtBrick() != 7 || brick.GetComponent<NumberAtBrick>().NumAtBrick() != 11)
+                    {
+                        Debug.Log("level1 - base1 - you find " + brick.GetComponent<NumberAtBrick>().NumAtBrick() + " not a prime");
+                        textdisplayshow.text = " מצטערת, אני צריכה שהטאבון שלי יהיה מורכב ממספרים ראשונים, כאלה שאי אפשר לפרק לחלקים למספרים אחרים כמו מספרים פריקים, כמו שאתם וודאי זוכרים מספר פריק הוא מספר שמורכב ממספרים ראשוניים.";
+                    }
+                    else
+                    {
+                        Debug.Log("level1 - base1 - you wrong");
+                        textdisplayshow.text = "חוששני שהמספר הזה לא מייצג את הכפולה המצויינת בראש המגדל";
+                        return true;
+                    }
+                    
                 }
+
+                
             }
 
 
@@ -389,6 +408,12 @@ public class NumberSuffleForGuasstaste : MonoBehaviour
                     Debug.Log("level1 - base2 - you wrong");
                     textdisplayshow.text = "אני חוששת שהמספרים הללו לא מייצגים את הכפולה המצויינת בראש המגדל";
                     return true;
+                }
+
+                if (brick.GetComponent<NumberAtBrick>().NumAtBrick() != 2 || brick.GetComponent<NumberAtBrick>().NumAtBrick() != 3 || brick.GetComponent<NumberAtBrick>().NumAtBrick() != 5 || brick.GetComponent<NumberAtBrick>().NumAtBrick() != 7 || brick.GetComponent<NumberAtBrick>().NumAtBrick() != 11)
+                {
+                    Debug.Log("level1 - base1 - you find " + brick.GetComponent<NumberAtBrick>().NumAtBrick() + " not a prime");
+                    textdisplayshow.text = " מצטערת, אני צריכה שהטאבון שלי יהיה מורכב ממספרים ראשונים, כאלה שאי אפשר לפרק לחלקים למספרים אחרים כמו מספרים פריקים, כמו שאתם וודאי זוכרים מספר פריק הוא מספר שמורכב ממספרים ראשוניים.";
                 }
             }
 
@@ -477,7 +502,7 @@ public class NumberSuffleForGuasstaste : MonoBehaviour
                 //check if we got the second prime brick
                 if (brick.GetComponent<NumberAtBrick>().NumAtBrick() == firstPrime && SecondPrimeGot != 1)
                 {
-                    SecondPrimeGot++;
+                    FirstPrimeGot++;//at 21.1.2021 it was second primegot
                     Debug.Log("level2 - base2 - you find" + firstPrime + " " + FirstPrimeGot + "bricks");
                     textdisplayshow.text = " יופידו!, מצאת " + FirstPrimeGot + "  עכשיו, באיזה כפולה תכפול אותו כדי לקבל את המספר שנמצא בראש הטאבון?";
                     

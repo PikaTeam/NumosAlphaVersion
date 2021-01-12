@@ -39,6 +39,8 @@ public class RandomeNumbers : MonoBehaviour
     bool done = false;
     int TheSmallest = 0;
 
+
+
     //zero container
    // public TextMeshProUGUI DisplayZero;
     //public GameObject ZeroRoll;
@@ -203,7 +205,7 @@ public class RandomeNumbers : MonoBehaviour
 
         if (done == true)
         {
-            textdisplayshow.text = "אתם פשוט מוכשרים! הצלחתם להביא לי את כל הרכיבים הדרושים, עכשיו אוכל להכין עבורכם את אחד החלקים שאתם צריכים למען הצלת המלך" + "\n" + "שיטת בחירת האיבר הנמוך ביותר שבה השתמשתם בחנות שלי מכונה שיטת ה- WOP שמכונה 'עיקרון הסדר הטוב' - פירושו שבכל קבוצה של מספרים בקבוצה אפשר למצוא בהכרח מספר שהוא הקטן ביותר מכל האיברים.";
+            textdisplayshow.text = "אתם פשוט מוכשרים! הצלחתם להביא לי את כל הרכיבים הדרושים, עכשיו אוכל להכין עבורכם את אחד החלקים שאתם צריכים למען הצלת המלך" + "\n" + "שיטת בחירת האיבר הנמוך ביותר שבה השתמשתם בחנות שלי המכונה 'עיקרון הסדר הטוב' - פירושו שבכל קבוצה של מספרים בקבוצה אפשר למצוא בהכרח מספר שהוא הקטן ביותר מכל האיברים.";
             Debug.Log("line 207");
             SingleToon.getInstance().curmoney.gain(50);
             SingleToon.getInstance().curscore.raise(150);
